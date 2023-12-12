@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class SlotGenerator : MonoBehaviour
 {
-    public bool canGenerate = true;
+    public bool canGenerate;
+
+    private void Start()
+    {
+        canGenerate = true;
+    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {

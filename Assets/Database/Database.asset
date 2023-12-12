@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f75dccc45b651f44b20dac51cf6fc73, type: 3}
-  m_Name: HexagonFlat-Top
+  m_Script: {fileID: 11500000, guid: f0d3e02eff269bd40ab6987ca49b6244, type: 3}
+  m_Name: Database
   m_EditorClassIdentifier: 
-  sprite: {fileID: 2747690628134850419, guid: ba12ff8ae4cb80b4996327c94de1f422, type: 3}
-  Weights: 20
-  bettingOdds: 0
