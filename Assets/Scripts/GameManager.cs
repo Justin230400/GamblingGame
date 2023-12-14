@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Database dbtemp;
 
-    private static int money;
-
-    public static int Money { get => money;}
+    private static int userIndex = -1;
+    private static Database db;
+    private static bool loginState = false;
 
     private void Awake()
     {
@@ -18,19 +17,48 @@ public class GameManager : MonoBehaviour
         }
 
         instance = this;
-
         DontDestroyOnLoad(gameObject);
 
-        money = 1000;
+        db = dbtemp;
+
+        if(!loginState)
+        {
+            Login("ghost");
+        }
     }
 
-    public static void WinMoney(int Amount)
+    public static void Login(string userName)
     {
-        money += Amount;
+        userIndex = db.UserLogin(userName);
+        Debug.Log("Now login with " + db.userDataList[userIndex].Name);
+        if(userName != "ghost")
+        {
+            loginState = true;
+        }
     }
 
-    public static void LostMoney(int Amount)
+    public static bool GetLoginState()
     {
-        money -= Amount;
+        return loginState;
+    }
+
+    public static void GetMoney(int amount)
+    {
+        db.userDataList[userIndex].Money += amount;
+    }
+
+    public static void WinMoney(int amount)
+    {
+        db.userDataList[userIndex].Money += amount;
+    }
+
+    public static void LostMoney(int amount)
+    {
+        db.userDataList[userIndex].Money -= amount;
+    }
+
+    public static int GetMoney()
+    {
+        return db.userDataList[userIndex].Money;
     }
 }

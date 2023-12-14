@@ -7,17 +7,34 @@ public class Database : ScriptableObject
 {
     public List<UserData> userDataList;
 
-    public void init()
+    public int UserLogin(string userName)
     {
-        if(userDataList == null)
+        UserData ud = new UserData(userName);
+        
+        if (userDataList == null)
         {
-            userDataList = new List<UserData>();
+            return UserRegister(ud);
         }
+
+        for(int i = 0; i < userDataList.Count; i++)
+        {
+            if(userDataList[i].Name == ud.Name)
+            {
+                return i;
+            }
+        }
+
+        return UserRegister(ud);
     }
 
-    public int UserRegister(string ID)
+    public int UserRegister(UserData ud)
     {
-        return 0;
+        if(userDataList == null)
+            userDataList = new List<UserData>();
+
+        userDataList.Add(ud);
+
+        return userDataList.Count - 1;
     }
 }
 
@@ -27,15 +44,54 @@ public class UserData
     private string _name;
     private int money;
 
-    public string UID { get => _uid; }
-    public int Money { get => money; set => money = value; }
-    public string Name { get => _name; set => _name = value; }
+    public string Name 
+    { 
+        get => _name;
+        set {
+            if(_name == null)
+            {
+                _name = value;
+            }
+        } }
 
-    public void RegisterUserId(string uid)
+    public int Money 
+    { 
+        get => money; 
+        set {
+            if (value < 0)
+            {
+                money = 0;
+            }
+            else
+            {
+                money = value;
+            }
+        } }
+
+    public string Uid
     {
-        if (_uid != null)
-            return;
-
-        _uid = uid;
+        get => _uid; 
+        set
+        {
+            if (_uid == null)
+            {
+                _uid = value;
+            }
+        }
     }
+
+    public UserData(string userName)
+    {
+        Name = userName;
+        Money = 0;
+        RegisterUserId();
+    }
+
+    
+    public void RegisterUserId()
+    {
+        Uid = System.Guid.NewGuid().ToString();
+    }
+    
+
 }

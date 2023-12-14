@@ -20,10 +20,10 @@ public class SlotDeleter : MonoBehaviour
         this.GetComponent<Collider2D>().isTrigger = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         spinsTime--;
-        Destroy(collision.gameObject);
+        Destroy(col.gameObject);
         if (spinsTime < 1)
         {
             this.gameObject.GetComponent<Collider2D>().isTrigger = false;

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 3625043607559282579, guid: 712d8b4143ef42a4aba4afc875023ec4, type: 3}
   Weights: 20
-  bettingOdds: 0
+  bettingOdds: 1

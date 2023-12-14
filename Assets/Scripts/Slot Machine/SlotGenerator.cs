@@ -11,8 +11,11 @@ public class SlotGenerator : MonoBehaviour
         canGenerate = true;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D col)
     {
+        if (col.tag == "Check")
+            return;
+
         canGenerate = true;
     }
 
