@@ -170,7 +170,7 @@ public class SlotMachineManager : MonoBehaviour
     private void Start()
     {
         previousAmount = 0;
-        ShowText(moneyText, "$" + GameManager.GetMoney().ToString());
+        ShowText(moneyText, GameManager.GetMoney().ToString());
         bet = 100;
         betAmount = 100;
         BetCheck();
@@ -238,11 +238,11 @@ public class SlotMachineManager : MonoBehaviour
         for (int i = 0; i < speed; i++)
         {
             nowAmount += changeAmount;
-            moneyText.text = "$" + nowAmount.ToString();
+            moneyText.text = nowAmount.ToString();
             yield return new WaitForFixedUpdate();
         }
 
-        moneyText.text = "$" + targetAmount.ToString();
+        moneyText.text = targetAmount.ToString();
         previousAmount = targetAmount;
 
     }
@@ -263,7 +263,7 @@ public class SlotMachineManager : MonoBehaviour
         spinButton.interactable = false;
 
         GameManager.LostMoney(bet);
-        // ShowText(moneyText, "$" + GameManager.GetMoney().ToString());
+        // ShowText(moneyText, GameManager.GetMoney().ToString());
         ShowMoney();
         ResetMachineState();
 
@@ -394,7 +394,7 @@ public class SlotMachineManager : MonoBehaviour
     void EarnRewards()
     {
         GameManager.WinMoney(earnMoney);
-        // ShowText(moneyText, "$" + GameManager.GetMoney().ToString());
+        // ShowText(moneyText, GameManager.GetMoney().ToString());
         ShowMoney();
         earnMoney = 0;
     }

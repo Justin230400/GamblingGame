@@ -51,11 +51,11 @@ public class LobbyManager : MonoBehaviour
         for (int i = 0; i < speed; i++)
         {
             nowAmount += changeAmount;
-            moneyText.text = "$" + nowAmount.ToString();
+            moneyText.text = nowAmount.ToString();
             yield return new WaitForFixedUpdate();
         }
         
-        moneyText.text = "$" + targetAmount.ToString();
+        moneyText.text = targetAmount.ToString();
         previousAmount = targetAmount;
         
     }

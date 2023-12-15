@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f75dccc45b651f44b20dac51cf6fc73, type: 3}
-  m_Name: HexagonPointed-Top
+  m_Name: 7
   m_EditorClassIdentifier: 
-  sprite: {fileID: -2135585597343286014, guid: e53b5e49a399f2d4f86044b4dcfd05a7, type: 3}
-  Weights: 10
-  bettingOdds: 3
+  sprite: {fileID: 21300000, guid: ca71f7801f8f6404ab753ddda93bc439, type: 3}
+  Weights: 5
+  bettingOdds: 5

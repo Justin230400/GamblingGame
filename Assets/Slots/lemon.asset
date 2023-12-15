@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f75dccc45b651f44b20dac51cf6fc73, type: 3}
-  m_Name: IsometricDiamond
+  m_Name: lemon
   m_EditorClassIdentifier: 
-  sprite: {fileID: 3625043607559282579, guid: 712d8b4143ef42a4aba4afc875023ec4, type: 3}
-  Weights: 20
+  sprite: {fileID: 21300000, guid: ad8f5a3da77765647b25dbfacf7e7a87, type: 3}
+  Weights: 12
   bettingOdds: 1

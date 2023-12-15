@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f75dccc45b651f44b20dac51cf6fc73, type: 3}
-  m_Name: HexagonFlat-Top
+  m_Name: banana
   m_EditorClassIdentifier: 
-  sprite: {fileID: 2747690628134850419, guid: ba12ff8ae4cb80b4996327c94de1f422, type: 3}
+  sprite: {fileID: 21300000, guid: 8afcfc344b546e24db096a28a6d4175c, type: 3}
   Weights: 20
   bettingOdds: 1
